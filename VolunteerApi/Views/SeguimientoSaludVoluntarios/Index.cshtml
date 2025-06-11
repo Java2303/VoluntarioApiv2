@@ -1,0 +1,143 @@
+﻿@model IEnumerable<VolunteerApi.Models.SeguimientoSaludVoluntario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VoluntarioID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoSangre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CondicionFisica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alergias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnfermedadesCronicas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicamentos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoVacunacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FrecuenciaCardiaca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresionArterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FrecuenciaRespiratoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Temperatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NivelEstres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorasSueño)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoAnimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FrecuenciaEjercicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoActividad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DuracionEjercicio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VoluntarioID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoSangre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CondicionFisica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alergias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnfermedadesCronicas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicamentos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoVacunacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FrecuenciaCardiaca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresionArterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FrecuenciaRespiratoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Temperatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelEstres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorasSueño)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoAnimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FrecuenciaEjercicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoActividad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DuracionEjercicio)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SeguimientoID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SeguimientoID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SeguimientoID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
