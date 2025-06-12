@@ -1,13 +1,15 @@
-# Build stage
+# Etapa 1: build
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /app
-COPY *.csproj .
-RUN dotnet restore
-COPY . .
-RUN dotnet publish -c Release -o out
+WORKDIR /src
+COPY ./VolunteerApi/*.csproj ./VolunteerApi/
+RUN dotnet restore ./VolunteerApi/VolunteerApi.csproj
 
-# Runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
+COPY . .
+WORKDIR /src/VolunteerApi
+RUN dotnet publish -c Release -o /app/publish
+
+# Etapa 2: runtime
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
-COPY --from=build /app/out .
+COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "VolunteerApi.dll"]
